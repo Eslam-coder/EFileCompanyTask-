@@ -1,0 +1,52 @@
+<div class="body">
+    <br>
+        <h2 class="header shadow">Contacts</h2>
+        <br>
+        <button class="btn btn-success shadow" routerLink='/AddContact'>Create New Contact</button>
+        <br>
+        <form (submit)="Search(form)" #form="ngForm">
+            <label for="name">Search</label>
+            <input type="text" id="filter" [(ngModel)]="SearchFilter.name" #name=ngModel name="name"/>
+            <button class="btn btn-outline-success" type="submit" [disabled]="!form.valid">Search</button>
+        </form>
+        <br>
+        <table class="table table-hover shadow">
+            <thead>
+                <tr style="color: #fff;background-color:#198754;">
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Notes</th>
+                    <th>IsLocked</th>
+                    <th colspan="2" class="text-center">Control</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let contact of FirstFiveContact">
+                <tr>
+                    <td>{{contact.contactId}}</td>
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.phone}}</td>
+                    <td>{{contact.address}}</td>
+                    <td>{{contact.notes}}</td>
+                    <td>{{contact.isLocked}}</td>
+                    <td class="text-center"><button class="btn btn-danger" (click)="Delete(contact.contactId)" style="margin-right: 5px;" placement="top" Tooltip="Remove"><i class="fas fa-trash"></i></button><button class="btn btn-success" (click)="EditContact(contact.contactId)" placement="top" Tooltip="Edit"><i class="fas fa-edit"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+
+<!--Pagination-->
+<nav aria-label="...">
+    <ul class="pagination pagination-sm">
+      <li class="page-item active" aria-current="page">
+        <span class="page-link" (click)=GetDividedByFirstFive()>1</span>
+      </li>
+      <li class="page-item"><a class="page-link" (click)="GetDividedByNextFive(1)">2</a></li>
+      <li class="page-item"><a class="page-link" (click)="GetDividedByNextFive(2)">3</a></li>
+      <li class="page-item"><a class="page-link" [hidden]="AppearPage" (click)="GetDividedByNextFive(3)">4</a></li>
+    </ul>
+  </nav>
+
+
+

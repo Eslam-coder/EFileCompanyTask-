@@ -1,0 +1,63 @@
+<div class="body">
+    <br>
+        <div class="row">
+            <div class="col-8">
+                <div class="d-flex justify-content-center">
+                    <div class="card shadow" style="width:42rem;">
+                        <div class="card-header text-center">
+                            <h5>Add New Contact</h5>
+                        </div>
+                        <br>
+                        <div class="container">
+                            <div class="body">
+                                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                         <label for="name">Name</label>
+                                         <input type="text" name="name" id="name" class="form-control" formControlName="name">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="text" name="phone" class="form-control" id="phone" formControlName="phone">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <input type="text" name="address" class="form-control" id="address" formControlName="address">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="notes">Notes</label>
+                                        <input type="text" name="notes" class="form-control" id="notes" formControlName="notes">
+                                    </div>
+                                    <br>
+                                    <div class="form-group col-md-12 d-flex justify-content-center">
+                                        <button type="submit" style="width: 100%;" class="btn btn-success">Save</button>
+                                    </div>
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card-header shadow" style="padding:2px;">
+                    <h5 class="text-center">Contact Preview</h5>
+                </div>
+                <br>
+                <div class="card-body">
+                    <h5>Name: <span style="color:#198754;">{{this.form.get('name').value}}</span></h5>
+                    <hr>
+                    <h6>Phone: <span style="color: #198754;">{{this.form.get('phone').value}}</span></h6>
+                    <hr>
+                    <h6>Address: <span style="color: #198754;">{{this.form.get('address').value}}</span></h6>
+                    <hr>
+                    <h6>Notes: <span style="color: #198754;">{{this.form.get('notes').value}}</span></h6>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+

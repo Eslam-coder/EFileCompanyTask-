@@ -1,0 +1,16 @@
+.header{
+    border-radius: 5px;
+    background-color:white;
+    color: #198754;
+    border:2px solid #198754;
+    text-align: center;
+}
+
+ul li{
+    cursor: pointer;
+}
+
+input{
+    border-radius:10px;
+    /* border: 3px solid black; */
+}

@@ -1,0 +1,43 @@
+<div class="body">
+    <br>
+        <div class="row">
+            <div class="d-flex justify-content-center">
+            <div class="card shadow" style="width: 35rem;">
+                <div class="card-header">
+                   <h5 class="text-center">Edit Contact</h5>
+                </div>
+                <div class="card-body">
+                    <form #f="ngForm" (ngSubmit)="submit(f)">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" #name=ngModel [(ngModel)]="Contact.name" name="name">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" class="form-control" #phone=ngModel [(ngModel)]="Contact.phone" name="phone">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" #address=ngModel [(ngModel)]="Contact.address" name="address">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="notes">Notes</label>
+                                <input type="text" class="form-control" #notes=ngModel [(ngModel)]="Contact.notes" name="notes">
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-success" style="width: 100%;">Save</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+
+
+
